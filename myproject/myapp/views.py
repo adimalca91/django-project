@@ -22,6 +22,6 @@ def showform(request):
 
 def getform(request):
     if request.method == "POST":
-        id = request.POST['userid']
-        name = request.POST['name']
+        id = request.POST['userid']        # According to the name attribute in the html file
+        name = request.POST['nameparam']   # According to the name attribute in the html file
     return HttpResponse(f"Body Parameters: Name: {name}, User ID: {id}")
