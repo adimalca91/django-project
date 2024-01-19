@@ -1,0 +1,8 @@
+''' For Body Parameters via a submit form with POST method '''
+
+<form action="/myapp/getform/" method="POST">
+    {% csrf_token %}
+    <p>Name: <input type="text", name="name"></p>
+    <p>User ID: <input type="name", name="userid"></p>
+    <input type="submit">
+</form>
