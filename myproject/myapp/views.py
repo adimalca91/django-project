@@ -7,7 +7,13 @@ def home(request):
 
 # Path Parameters
 def pathview(request, name, id):
-    return HttpResponse(f"Name: {name}, User ID: {id}")
+    return HttpResponse(f"Path Parameters: Name: {name}, User ID: {id}")
+
+# Query String Parameters
+def qryview(request):
+    name = request.GET['name']
+    id = request.GET['id']
+    return HttpResponse(f"Query String Parameters: Name: {name}, User ID: {id}")
 
 
     
