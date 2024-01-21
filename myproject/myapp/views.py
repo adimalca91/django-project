@@ -25,3 +25,13 @@ def getform(request):
         id = request.POST['userid']        # According to the name attribute in the html file
         name = request.POST['nameparam']   # According to the name attribute in the html file
     return HttpResponse(f"Body Parameters: Name: {name}, User ID: {id}")
+
+def drinks(request, drink_name):
+    drinks = {
+        'mocha' : 'type of coffee',
+        'tea' : 'type of beverage',
+        'lemonade' : 'type of refreshment'
+    }
+    
+    drink_description = drinks[drink_name]
+    return HttpResponse(f"<h2>{drink_name}</h2> {drink_description}")
