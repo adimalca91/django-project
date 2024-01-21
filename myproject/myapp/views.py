@@ -26,12 +26,18 @@ def getform(request):
         name = request.POST['nameparam']   # According to the name attribute in the html file
     return HttpResponse(f"Body Parameters: Name: {name}, User ID: {id}")
 
+# URL Parameters - with path converter
+def showdrinks(request):
+    return render(request, 'showdrinks.html')
+
 def drinks(request, drink_name):
     drinks = {
         'mocha' : 'type of coffee',
         'tea' : 'type of beverage',
         'lemonade' : 'type of refreshment'
     }
-    
-    drink_description = drinks[drink_name]
+    if drink_name not in drinks:
+        drink_description = 'This drink is not available in our shop, please choose a different drink.'
+    else:
+        drink_description = drinks[drink_name]
     return HttpResponse(f"<h2>{drink_name}</h2> {drink_description}")
