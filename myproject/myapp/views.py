@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from myapp.forms import InputForm
+# from myapp.forms import InputForm
+from myapp.forms import LogForm
 
 
 # Create your views here.
@@ -43,8 +44,17 @@ def drinks(request, drink_name):
         drink_description = drinks[drink_name]
     return HttpResponse(f"<h2>{drink_name}</h2> {drink_description}")
 
-# Form Class - creating a form using the Django's form class
+# # Form Class - creating a form using the Django's form class
+# def form_view(request):
+#     form = InputForm() # an instance object of the InputForm class
+#     context = {"form":form}
+#     return render(request, "home.html", context)
+
 def form_view(request):
-    form = InputForm() # an instance object of the InputForm class
-    context = {"form":form}
+    form = LogForm()
+    if request.method == 'POST':
+        form = LogForm(request.POST) # updates the form object with the contents of the POST inside the request object (that was submitted - first_name, last_name, time_log)
+        if form.is_valid():
+            form.save()
+    context = {"form" : form}
     return render(request, "home.html", context)

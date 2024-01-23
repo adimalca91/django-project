@@ -1,7 +1,7 @@
-<p> Hello </p>
+<p> Hello World! </p>
 
 <form action="" method="post">
     {% csrf_token %}
-    {{form}}                  <!-- This is the form taken from the "context" variable in the view function -->
+    {{form.as_p}}                  <!-- This is the form taken from the "context" variable in the view function -->
     <input type="submit" value="Submit">
 </form>

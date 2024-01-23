@@ -20,3 +20,16 @@ class Drinks(models.Model):
     drink = models.CharField(max_length=200)
     price = models.IntegerField()
     category_id = models.ForeignKey(DrinksCategory, on_delete=models.PROTECT, default=None)
+
+
+'''
+This is model is used with a form inheriting the ModelForm class
+The goal is to create a Form with ModelForm that the submitted data will be saved
+in the Logger model / table / database.
+
+So anyone who log-in their information will be save in this model!
+'''    
+class Logger(models.Model):
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    time_log = models.TimeField(help_text="Enter the exact time!")
