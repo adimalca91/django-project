@@ -9,4 +9,5 @@ urlpatterns = [
     path('myapp/getform/', views.getform, name='getform'), # Body Parameters - POST requests + according to the action attribute in the html file
     path('drinks/', views.showdrinks, name='drink_name'), # URL parameters with type converter
     path('drinks/<str:drink_name>', views.drinks, name='drink_name'), # URL parameters with type converter
+    path("home/", views.form_view), # Creating Forms using Form Class in Django
 ]

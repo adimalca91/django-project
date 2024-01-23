@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from myapp.forms import InputForm
 
 
 # Create your views here.
@@ -41,3 +42,9 @@ def drinks(request, drink_name):
     else:
         drink_description = drinks[drink_name]
     return HttpResponse(f"<h2>{drink_name}</h2> {drink_description}")
+
+# Form Class - creating a form using the Django's form class
+def form_view(request):
+    form = InputForm() # an instance object of the InputForm class
+    context = {"form":form}
+    return render(request, "home.html", context)
