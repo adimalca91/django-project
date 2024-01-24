@@ -59,7 +59,18 @@ def form_view(request):
     context = {"form" : form}
     return render(request, "home.html", context)
 
-
+'''
+Note, this view function is first being invoked (called) when we enter the local host url with the ending of "bookink/"
+and we basically create a GET request for this view. Therefore, the first time we do NOT enter the if statement here
+and we only create a form instace object that is empty / not populated with data and we render it with booking.html
+and display it to the user - so untill now the user just sees an empty form to fill and submit.
+Then, the user fills the reservation form and submits it. When it's submitted a POST request is being created and sent to
+the server with the details entered by the user in the body of the request. Also, this view function is being invoked
+once again but this time with a POST request - so a form instance object is being created again, but now it's being
+populated by the data from the submitted form. Then it's being checked if its valid and if it is then it's saved.
+Only, now it's being rendered with the booking.html file, with the details of the user. Also, it's being saved in the
+Booking Model to connect to a database table which will save amd store all that information! 
+'''
 def bookingForm_view(request):
     form = BookingForm()
     if request.method == 'POST':
