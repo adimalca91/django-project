@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 # from myapp.forms import InputForm
-from myapp.forms import LogForm
+from myapp.forms import LogForm, BookingForm
 
 
 # Create your views here.
@@ -58,3 +58,13 @@ def form_view(request):
             form.save()
     context = {"form" : form}
     return render(request, "home.html", context)
+
+
+def bookingForm_view(request):
+    form = BookingForm()
+    if request.method == 'POST':
+        form = BookingForm(request.POST) # updates the form object with the contents of the POST inside the request object (that was submitted - first_name, last_name, time_log)
+        if form.is_valid():
+            form.save()
+    context = {"form" : form}
+    return render(request, "booking.html", context)

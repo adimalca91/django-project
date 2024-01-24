@@ -33,3 +33,17 @@ class Logger(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     time_log = models.TimeField(help_text="Enter the exact time!")
+    
+
+'''
+This is a model used with a form to accept user input on the booking page, connect with a database table
+for storing the reservation requests received on the Little Lemon website.
+Later the staff will be able to access and view this request from the Django administration control panel.
+LAB-07: Working with Forms ->  Models > Models and Forms
+'''
+class Booking(models.Model):
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    guest_count = models.IntegerField()
+    reservation_time = models.DateField(auto_now=True)
+    comments = models.CharField(max_length=200)

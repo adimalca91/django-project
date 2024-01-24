@@ -1,0 +1,7 @@
+<p> Booking for the Little Lemon! </p>
+
+<form action="" method="post" style="background-color:orange;">
+    {% csrf_token %}
+    {{form.as_p}}                  <!-- This is the form taken from the "context" variable in the view function -->
+    <input type="submit" value="Submit">
+</form>

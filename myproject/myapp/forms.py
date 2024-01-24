@@ -1,5 +1,5 @@
 from django import forms
-from .models import Logger
+from .models import Logger, Booking
 
 class LogForm(forms.ModelForm):
     class Meta:
@@ -18,4 +18,9 @@ class LogForm(forms.ModelForm):
 #     shift = forms.ChoiceField(choices=WORK_SHIFTS)
 #     time_log = forms.TimeField()
     
-    
+
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = "__all__"
+        
