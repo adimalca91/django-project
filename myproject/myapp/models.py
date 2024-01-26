@@ -47,3 +47,14 @@ class Booking(models.Model):
     guest_count = models.IntegerField()
     reservation_time = models.DateField(auto_now=True) # This default parameter set to True means it will not be displayed to the user in the webpage, only in the model / database table
     comments = models.CharField(max_length=200)
+    
+
+class Employee(models.Model):
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    role = models.CharField(max_length=100)
+    shift = models.IntegerField()
+    
+
+    
+    
