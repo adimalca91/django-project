@@ -74,6 +74,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# ADI - To work with other databases, configure this section here.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
