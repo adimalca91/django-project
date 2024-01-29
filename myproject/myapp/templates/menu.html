@@ -1,3 +1,6 @@
+<!-- For a static element to work this needs to be added to the beginning of the HTML file -->
+{% load static %} 
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,8 +16,12 @@
 <h1 style="color: #495E57"> Menu </h1>
 
 <!-- Add paragraph code -->
+<p> {{menu}} </p>
 
 <!-- Add image code -->
+<img src="{% static '/dessert.jpg' %}"
+
+
 </body>
 
 </html>
