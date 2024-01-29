@@ -58,7 +58,15 @@ class Employee(models.Model):
     def __str__(self) -> str:
         return self.first_name
         
+'''
+A class to demonstarate creating dynamic templates with models.
+This means fetching the data inside a model and displaying it on the browser.
+'''
+class Menu(models.Model):
+    name = models.CharField(max_length=200)
+    price = models.IntegerField()
     
-
+    def __str__(self):
+        return self.name
     
     

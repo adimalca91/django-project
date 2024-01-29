@@ -10,5 +10,8 @@ urlpatterns = [
     path('drinks/', views.showdrinks, name='drink_name'), # URL parameters with type converter
     path('drinks/<str:drink_name>', views.drinks, name='drink_name'), # URL parameters with type converter
     path("home/", views.form_view), # Creating Forms using Form Class in Django
-    path("booking/", views.bookingForm_view), # Creating ModelForm for making a reservation in the restaurant 
+    path("booking/", views.bookingForm_view), # Creating ModelForm for making a reservation in the restaurant
+    path("about/", views.about), # working with tamplates lab
+    path("menu/", views.menu), # working with tamplates lab
+    path("menufromdatabase/", views.menu_models_templates),
 ]

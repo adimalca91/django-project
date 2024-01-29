@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # from myapp.forms import InputForm
 from myapp.forms import LogForm, BookingForm
+from myapp.models import Menu
 
 
 # Create your views here.
@@ -79,3 +80,23 @@ def bookingForm_view(request):
             form.save()
     context = {"form" : form}
     return render(request, "booking.html", context)
+
+'''
+Working with Templates and Static Files (image) with DTL
+'''
+def about(request):
+    about_content = {'about': """Little Lemon is a family-owned Mediterranean restaurant,
+                     focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian,
+                     Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. 
+                     The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day."""}
+    return render(request, 'about.html', about_content)
+
+def menu(request):
+    menu_content = {'menu': "This is our Menu", 'image':"Dessert image shown below"}
+    return render(request, 'menu.html', menu_content)
+
+def menu_models_templates(request):
+    menu_obj = Menu.objects.all() # creating a menu object / instance which is a QuerySet object
+    return render(request, 'menudb.html', {'menudb': menu_obj})
+
+    
