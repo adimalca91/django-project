@@ -1,1 +1,12 @@
-{{menudb}}
+<h3> This is a Menu model object / instance </h3>
+<p> {{menudb}} </P>
+
+<h3> These are the model's elements / instances inside it - the data inside the databse / model </h3>
+
+{% if menudb %}
+{% for menu_item in menudb %}
+<p> {{menu_item.name}} : {{menu_item.price}} </p>
+{% endfor %}
+{% else %}
+<p> No Item to Display </p>
+{% endif %}
