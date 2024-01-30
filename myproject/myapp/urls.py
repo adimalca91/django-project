@@ -14,4 +14,5 @@ urlpatterns = [
     path("about/", views.about), # working with tamplates lab
     path("menu/", views.menu), # working with tamplates lab
     path("menufromdatabase/", views.menu_models_templates),
+    path('book/', views.book),
 ]

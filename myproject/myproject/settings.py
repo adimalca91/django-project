@@ -126,4 +126,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Adding this declaration to work with static files (ex: images)
-STATICFILES_DIRS = 'myapp/static',
+STATICFILES_DIRS = ['myapp/static',]

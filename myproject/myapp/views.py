@@ -97,6 +97,12 @@ def menu(request):
 
 def menu_models_templates(request):
     menu_obj = Menu.objects.all() # creating a menu object / instance which is a QuerySet object
+    #manudb = {'menudb': menu_obj}
     return render(request, 'menudb.html', {'menudb': menu_obj})
 
-    
+'''
+View function using template inheritance
+'''
+def book(request):
+    return render(request, 'book.html')
+   
