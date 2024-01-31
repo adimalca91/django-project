@@ -112,7 +112,9 @@ def book(request):
 '''
 Class Based View
 '''
-# TODO: Add here class based views
+# TODO: ADI - the default drinks_list.html does NOT work for me here - maybe b/c the templates folder is NOT under the project directory
+# I put it under the myapp directory.
 class DrinkList(ListView):
     model = Drinks
-    template_name = 'showdrinks.html'
+    template_name = 'drinks_list_2.html'
+    
