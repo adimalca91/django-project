@@ -15,4 +15,5 @@ urlpatterns = [
     path("menu/", views.menu), # working with tamplates lab
     path("menufromdatabase/", views.menu_models_templates),
     path('book/', views.book),
+    path('drinkslist/', views.DrinkList.as_view()), # class based view to display all the drinks in Drinks Model / DB
 ]

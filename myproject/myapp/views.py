@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # from myapp.forms import InputForm
 from myapp.forms import LogForm, BookingForm
-from myapp.models import Menu
+from myapp.models import Menu, Drinks
+from django.views.generic.list import ListView
+
 
 
 # Create your views here.
@@ -105,4 +107,12 @@ View function using template inheritance
 '''
 def book(request):
     return render(request, 'book.html')
-   
+
+
+'''
+Class Based View
+'''
+# TODO: Add here class based views
+class DrinkList(ListView):
+    model = Drinks
+    template_name = 'showdrinks.html'
